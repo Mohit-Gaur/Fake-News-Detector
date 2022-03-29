@@ -18,8 +18,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install black[jupyter]
         pip install pylint
-    - name: Analysing the code with pylint
+    - name: Code Analysis
       run: |
-        #pylint $(git ls-files '*.py')
-        pylint $(git ls-files '*.ipynb')
+        # pylint $(git ls-files '*.py')
+        black --check --line-length 119 project_notebook.ipynb
