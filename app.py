@@ -3,7 +3,8 @@ import pickle
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-model=pickle.load(open('Model.pkl','rb'))
+with open('Model.pkl', 'rb') as pf:
+    model=pickle.load(pf)
 
 @app.route('/')
 def home():

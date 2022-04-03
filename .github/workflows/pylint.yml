@@ -22,5 +22,5 @@ jobs:
         pip install pylint
     - name: Code Analysis
       run: |
-        pylint $(git ls-files '*.py')
+        pylint $(git ls-files '*.py') --disable=C0114,C0116
         black --check --line-length 119 project_notebook.ipynb
