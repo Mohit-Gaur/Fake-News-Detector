@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
     
     
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 <body>
 
   <header>
-    <img src="FAKE - NEWS.jpg" class="imag" alt="Fake News Detector">
+    <img src="{{url_for('static',filename='FAKE - NEWS.jpg')}}" class="imag" alt="Fake News Detector">
   </header>
 
   <div class="content">
@@ -22,7 +22,7 @@
   
       <form action="{{url_for('getprediction')}}" method="post">
         <div class="input-group">
-        <textarea id="news" rows="8" required maxlength="1000"></textarea>
+        <textarea id="news" name="news" rows="8" required maxlength="1000"></textarea>
         <label for="news">Enter News:</label>
         </div>
         
@@ -32,7 +32,7 @@
       </form>
           
         <br>
-        <!-- {{output}} -->
+
 
     <!-- </div> -->
   </div>

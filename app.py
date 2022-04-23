@@ -13,8 +13,11 @@ def home():
 @app.route('/getprediction',methods=['POST'])
 def getprediction():
     input_form=[request.form.get("news")]
+    print(f"Initial input is {input_form}")
     final_input=[str(input_form)]
+    print(f"Final input is {final_input}")
     prediction=model.predict(final_input)
+    print(f"Model prediction is {prediction}")
 
     return render_template('index.html', output=f'News is:{prediction}')
 
