@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="index.css">
+    
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
+    
+    <title>Fake News Detector</title>
 </head>
 <body>
-<div>
-    <h2>Predict News</h2>
 
-<form action="{{url_for('getprediction')}}"method="post">
-  <label for="news">News:</label><br>
-  <input type="text" id="news" name="news"><br>
-  <button type="submit">getprediction</button>
+  <header>
+    <img src="FAKE - NEWS.jpg" class="imag" alt="Fake News Detector">
+  </header>
 
-</form>
-<br>
-{{output}}
-</div>
+  <div class="content">
+
+    <!-- <div class="newdiv1"> -->
+  
+      <form action="{{url_for('getprediction')}}" method="post">
+        <div class="input-group">
+        <textarea id="news" rows="8" required maxlength="1000"></textarea>
+        <label for="news">Enter News:</label>
+        </div>
+        
+          <button type="submit" id="cls" onclick="document.getElementById('cls').innerHTML='This news is {{output}}'" class="btn btn1">Get Prediction</button>
+        
+        
+      </form>
+          
+        <br>
+        <!-- {{output}} -->
+
+    <!-- </div> -->
+  </div>
+
 </body>
 </html>
