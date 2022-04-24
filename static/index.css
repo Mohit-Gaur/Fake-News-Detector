@@ -115,3 +115,40 @@ textarea:valid~label {
     background-color: #4CAF50;
     color: white;
   }
+
+  a:link, a:visited {
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .div1 {
+    display: inline-block block;
+    margin-left: auto;
+    margin-right: auto;
+      margin-left: 37.5%;
+    
+  }
+
+  @media screen and (max-width: 700px) {
+    .div1 {
+        display: inline-block block;
+        margin-left: auto;
+        margin-right: auto;
+          margin-left: 34%;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .div1 {
+        display: inline-block block;
+        margin-left: auto;
+        margin-right: auto;
+          margin-left: 31%;
+    }
+  }
+  
