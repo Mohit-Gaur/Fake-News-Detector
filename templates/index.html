@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
     
     
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    
     <title>Fake News Detector</title>
 </head>
 <body>
 
   <header>
-    <img src="FAKE - NEWS.jpg" class="imag" alt="Fake News Detector">
+    <img src="{{url_for('static',filename='FAKE - NEWS.jpg')}}" class="imag" alt="Fake News Detector">
   </header>
 
   <div class="content">
@@ -22,20 +23,24 @@
   
       <form action="{{url_for('getprediction')}}" method="post">
         <div class="input-group">
-        <textarea id="news" rows="8" required maxlength="1000"></textarea>
+        <textarea id="news" name="news" rows="8" required maxlength="1000"></textarea>
         <label for="news">Enter News:</label>
         </div>
         
-          <button type="submit" id="cls" onclick="document.getElementById('cls').innerHTML='This news is {{output}}'" class="btn btn1">Get Prediction</button>
+          <button type="submit" id="cls"  class="btn btn1">Get Prediction</button>
         
-        
-      </form>
-          
+          <br>
         <br>
-        <!-- {{output}} -->
+        
+      <div class="div1"><a href="#">{{output}}</a></div>
+          
+      </form>
+      
+        <br>
+
 
     <!-- </div> -->
   </div>
-
+  
 </body>
 </html>
